@@ -1,0 +1,13 @@
+#!/bin/bash
+
+for f in *.dat;
+do
+  echo "Processing $f file..." 	# take action on each file. $f store current file name
+				# ls field* | cut -d . -f 1
+  new="${f%.*}" 		# removes .dat		
+  new="${new}.plt"		# adds .plt
+  echo "new file $new "	
+
+  /home/ek/Desktop/tecplot_new/360ex_2021r1/bin/preplot "$f" "$new"
+  
+done
